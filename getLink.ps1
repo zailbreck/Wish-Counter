@@ -96,8 +96,9 @@ if (-Not $linkFound) {
   Write-Host "Cannot find the wish history url! Make sure to open the wish history first!" -ForegroundColor Red
   return
 }
-
-$wishHistoryUrl = $link
+$arr = $link.Split("&")
+$length = $arr[12].length()
+$wishHistoryUrl = $arr[12].substring($arr[12].length - 8)
 
 Write-Host $wishHistoryUrl
 Set-Clipboard -Value $wishHistoryUrl
