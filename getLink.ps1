@@ -97,7 +97,7 @@ if (-Not $linkFound) {
   return
 }
 $arr = $link.Split("&")
-$length = $arr[12].length()
+$length = $arr[12].length
 $wishHistoryUrl = $arr[12].substring($arr[12].length - 8)
 
 Write-Host $wishHistoryUrl
